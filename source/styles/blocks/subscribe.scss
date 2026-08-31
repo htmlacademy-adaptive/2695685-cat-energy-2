@@ -1,0 +1,80 @@
+.subscribe {
+  padding: 20px 20px 40px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 30px 80px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 95px 30px 104px;
+  }
+}
+
+.subscribe__title {
+  @include font-params-mobile(24px, 24px);
+  position: relative;
+  margin: 0 0 33px;
+  max-width: 80%;
+  width: fit-content;
+  font-family: $secondary-font;
+  font-weight: $base-font-weight;
+  background-color: $base-light;
+  box-shadow:
+    -20px 0 0 0 $base-light,
+    40px 0 0 0 $base-light;
+
+  @media (min-width: $tablet-width) {
+    @include font-params-tablet(32px, 32px);
+    margin-bottom: 66px;
+    max-width: 90%;
+    padding-left: 40px;
+    box-shadow:
+      0 0 0 0 $base-light,
+      40px 0 0 0 $base-light;
+  }
+
+  @media (min-width: $desktop-width) {
+    @include font-params-tablet(40px, 40px);
+    margin-bottom: 72px;
+    padding-left: 0;
+    box-shadow:
+      -40px 0 0 0 $base-light,
+      40px 0 0 0 $base-light;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 100vw;
+    height: 2px;
+    background-color: $accent-color;
+    box-shadow: 100vw 0 0 0 $accent-color;
+    z-index: -1;
+  }
+}
+
+.subscribe__description {
+  @include font-params-mobile(16px, 24px);
+  margin: 0 0 24px;
+  font-family: $secondary-font;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    @include font-params-tablet(24px, 32px);
+    margin: 0 auto 24px;
+    max-width: 90%;
+  }
+}
+
+.subscribe__form {
+  @media (min-width: $tablet-width) {
+    max-width: 89%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 752px;
+  }
+}

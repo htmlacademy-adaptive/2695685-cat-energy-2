@@ -1,0 +1,87 @@
+.advantage {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: $accent-color;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @media (min-width: $tablet-width) {
+    &::before {
+      top: 32px;
+      width: 80px;
+      height: 80px;
+    }
+
+    &::after {
+      @include font-params-tablet(280px, 280px);
+      content: counter(item);
+      counter-increment: item;
+      position: absolute;
+      top: -8;
+      right: 79px;
+      z-index: -1;
+      font-family: $secondary-font;
+      color: $dark-background;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+.advantage:first-child::after {
+  @media (min-width: $tablet-width) {
+    right: 101px;
+  }
+
+  @media (min-width: $desktop-width) {
+    right: 20px;
+  }
+}
+
+.advantage--nutrition::before {
+  background-image: url("../../icons/stack.svg#leaf");
+  background-size: 30px 32px;
+}
+
+.advantage--convenience::before {
+  background-image: url("../../icons/stack.svg#powder");
+  background-size: 26px 29px;
+}
+
+.advantage--economy::before {
+  background-image: url("../../icons/stack.svg#cutlery");
+  background-size: 25px 30px;
+}
+
+.advantage--result::before {
+  background-image: url("../../icons/stack.svg#time");
+  background-size: 26px 31px;
+}
+
+.advantage__description {
+  margin: 0;
+  padding-top: 2px;
+  padding-left: 80px;
+  color: $secondary-color;
+
+  @media (min-width: $tablet-width) {
+    padding: 143px 79px 0 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 143px 0 0;
+  }
+}

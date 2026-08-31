@@ -1,0 +1,160 @@
+.hero {
+  font-family: $secondary-font;
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows: auto 1fr 138px auto;
+  color: $base-light;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 30px 1fr 30px;
+    grid-template-rows: repeat(3, auto) 1fr;
+    color: $primary-color;
+    text-align: start;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 1fr 496px  704px 1fr;
+    grid-template-rows: auto auto 184px;
+    padding-bottom: 80px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: auto;
+    grid-column: 1 / 4;
+    grid-row: 1 / 4;
+    background: rgba(104, 183, 56, 0.85);
+    z-index: -2;
+
+    @media (min-width: $tablet-width) {
+      content: none;
+    }
+
+    @media (min-width: $desktop-width) {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 694px;
+      width: 50vw;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 302px;
+    grid-column: 1 / 4;
+    grid-row: 1 / 4;
+    background:
+      image-set(url("../../images/background/cat-hero-mobile@2x.webp") type("image/webp") 2x,
+      url("../../images/background/cat-hero-mobile@1x.webp") type("image/webp") 1x,
+      url("../../images/background/cat-hero-mobile@2x.jpg") type("image/jpg") 2x,
+      url("../../images/background/cat-hero-mobile@1x.jpg") type("image/jpg") 1x)
+      no-repeat center bottom / contain,
+      linear-gradient(to right, #4f4f53, #403f43);
+    z-index: -3;
+
+    @media (min-width: $tablet-width) {
+      content: none;
+    }
+
+    @media (min-width: $desktop-width) {
+      content: "";
+      width: 50vw;
+      height: 694px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background:
+        image-set(url("../../images/background/cat-hero-desktop@2x.webp") type("image/webp") 2x,
+        url("../../images/background/cat-hero-desktop@1x.webp") type("image/webp") 1x,
+        url("../../images/background/cat-hero-desktop@2x.jpg") type("image/jpg") 2x,
+        url("../../images/background/cat-hero-desktop@1x.jpg") type("image/jpg") 1x)
+        no-repeat 0 0,
+        #403f43;
+    }
+  }
+}
+
+.hero__wrapper {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+
+  @media (min-width: $desktop-width) {
+    margin-left: 70px;
+  }
+}
+
+.hero__title {
+  @include font-params-mobile(36px, 36px);
+  margin: 27px 0 25px;
+  font-weight: $base-font-weight;
+
+  @media (min-width: $tablet-width) {
+    @include font-params-tablet(60px, 60px);
+    margin: 40px 0 40px 90px;
+    max-width: 80%;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 106px 0 40px;
+    max-width: none;
+  }
+}
+
+.hero__slogan {
+  @include font-params-mobile($line-height: 14px);
+  margin: 0 0 29px;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    @include font-params-tablet(20px, 20px);
+    margin: 0 0 21px 90px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 52px;
+  }
+}
+
+.hero__image-wrapper {
+  grid-column: 2 / 3;
+  grid-row: 3 / 5;
+
+  @media (min-width: $tablet-width) {
+    place-self: center end;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 4;
+    place-self: start;
+    margin-top: 25px;
+    margin-left: -58px;
+  }
+}
+
+.hero__selection {
+  @include button;
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+
+  @media (min-width: $tablet-width) {
+    @include font-params-tablet(20px, 26px);
+    grid-row: 3 / 4;
+    margin: 29px 0 0 90px;
+    width: fit-content;
+    padding: 14px 26px;
+    text-align: center;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-row: 2 / 3;
+    margin: 0 0 0 70px;
+  }
+}

@@ -1,0 +1,72 @@
+@media (max-width: $mobile-width-only) {
+  .main-nav__toggle {
+    @include link;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .main-nav--opened {
+    right: 0;
+
+    .main-nav__toggle {
+      right: 8px;
+      position: absolute;
+      background-image: url("../../icons/stack.svg#close");
+    }
+
+    .main-nav__list {
+      position: relative;
+      top: 53px;
+      width: 100vw;
+      border-top: 1px solid #e6e6e6;
+    }
+  }
+
+  .main-nav--closed {
+    .main-nav__toggle {
+      background-size: 24px 24px;
+      background-image: url("../../icons/stack.svg#burger-button");
+    }
+
+    .main-nav__list {
+      display: none;
+    }
+  }
+
+  .main-nav--nojs {
+    position: static;
+    border-top: 1px solid #e6e6e6;
+
+    .main-nav__toggle {
+      display: none;
+    }
+
+    .main-nav__list {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .main-nav__toggle {
+    display: none;
+  }
+}
+
+.main-nav__list {
+  @include list-reset;
+
+  @media (min-width: $tablet-width) {
+    margin: 25px 3px 25px 0;
+    max-width: 500px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0;
+  }
+}

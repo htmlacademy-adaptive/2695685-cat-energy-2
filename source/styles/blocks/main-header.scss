@@ -1,0 +1,36 @@
+.main-header {
+  @media (min-width: $tablet-width) {
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-right: 0;
+    padding-top: 55px;
+    align-items: center;
+  }
+}
+
+.main-header__logo {
+  width: 65vw;
+
+  @media (min-width: $tablet-width) {
+    margin: 12px 10px;
+    width: fit-content;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0;
+  }
+}
+
+.main-header__nav {
+  @media (max-width: $mobile-width-only) {
+    position: absolute;
+    z-index: 2;
+    top: 12px;
+    right: 14px;
+  }
+}

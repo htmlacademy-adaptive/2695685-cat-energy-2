@@ -1,0 +1,61 @@
+.social {
+  padding: 0 0 11px;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  border-bottom: 1px solid #d9d9d9;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+    border: none;
+  }
+}
+
+.social__link {
+  @include link;
+  @include font-params-mobile(18px, 24px);
+  min-width: 28px;
+  padding: 1px;
+  min-height: 22px;
+  font-family: $secondary-font;
+  color: $primary-color;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 23px;
+    background-color: $mask-background-color;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+
+  @media (min-width: $tablet-width) {
+    transform: translateY(25%);
+  }
+
+  &:hover::before,
+  &:focus-visible::before {
+    background-color: $accent-color;
+  }
+
+  &:active::before {
+    opacity: 0.6;
+  }
+}
+
+.social__link--vk::before {
+  mask-image: url("../../icons/stack.svg#vk");
+  mask-size: 29px 20px;
+}
+
+.social__link--youtube::before {
+  mask-image: url("../../icons/stack.svg#youtube");
+  mask-size: 28px 19px;
+}
+
+.social__link--telegram::before {
+  mask-image: url("../../icons/stack.svg#telegram");
+  mask-size: 22px 19px;
+}

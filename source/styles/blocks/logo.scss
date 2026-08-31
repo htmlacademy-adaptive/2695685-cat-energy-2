@@ -1,0 +1,48 @@
+.logo {
+  @include link;
+  @include font-params-mobile(18px, 24px);
+  padding: 13px 20px 10px;
+  font-family: $secondary-font;
+  color: $primary-color;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0;
+    gap: 14px;
+  }
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.logo__text {
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (min-width: $tablet-width) {
+    position: static;
+    transform: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 118px;
+    height: 21px;
+  }
+}
+
+.logo__text--footer {
+  position: static;
+}

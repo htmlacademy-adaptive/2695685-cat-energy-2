@@ -1,0 +1,30 @@
+.goals {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+
+  @media (min-width: $tablet-width) {
+    padding: 0 30px;
+    gap: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    justify-content: space-between;
+    flex-flow: row wrap;
+  }
+}
+
+.goals__item {
+  min-height: 266px;
+
+  @media (min-width: $tablet-width) {
+    min-height: 372px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 374px;
+    max-width: calc(50% - 40px);
+  }
+}

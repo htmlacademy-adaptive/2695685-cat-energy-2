@@ -1,0 +1,86 @@
+.menu {
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    gap: 31px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 30px;
+  }
+}
+
+.menu__link {
+  @include link;
+  @include font-params-mobile(20px, 20px);
+  width: 100%;
+  padding: 22px;
+  border-bottom: 1px solid #e6e6e6;
+  font-family: $secondary-font;
+  color: $primary-color;
+  background-color: $base-light;
+
+  &:active {
+    color: $accent-color;
+  }
+
+  @media (min-width: $tablet-width) {
+    @include font-params-tablet($font-size: 18px);
+    padding: 12px 2px;
+    border: none;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+      color: $primary-color;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    @include font-params-tablet(20px, 20px);
+  }
+}
+
+.menu__item:last-child .menu__link {
+  @media (min-width: $tablet-width) {
+    padding-right: 0;
+  }
+}
+
+.menu--main .menu__link {
+  @media (min-width: $desktop-width) {
+    color: $base-light;
+    background-color: transparent;
+  }
+}
+
+.menu__link--current {
+  @media (min-width: $tablet-width) {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: calc(100% - 4px);
+      height: 2px;
+      background-color: $accent-color;
+      bottom: 0;
+      left: 2px;
+    }
+  }
+}
+
+.menu--main .menu__link--current {
+  @media (min-width: $desktop-width) {
+    &::after {
+      background-color: $base-light;
+    }
+  }
+}
