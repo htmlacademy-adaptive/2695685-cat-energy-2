@@ -86,6 +86,17 @@
 .card__title-link {
   @include link;
   color: $secondary-color-dark;
+
+  @media (min-width: $tablet-width) {
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+      color: $primary-color;
+    }
+  }
 }
 
 .card__description {
